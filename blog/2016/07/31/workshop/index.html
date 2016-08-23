@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Octopress Blog</title>
+  <title>Workshop - My Octopress Blog</title>
   <meta name="author" content="Berkan Acar">
 
   
-  <meta name="description" content="Github Komutları Sizlere Linux Yaz Kampında anlatılanları anlatacağım. Öncelikle github komutlarından başlamak istedim. Daha önceki yazımda bunlara &hellip;">
+  <meta name="description" content="GitHub Linux işletim sistemlerinde GitHub'a proje nasıl atılır? Yazımda bu işlemleri terminalden yapacağız. Ve tabiki git'e bir proje eklemek &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://berkanacar.github.io/">
+  <link rel="canonical" href="http://berkanacar.github.io/blog/2016/07/31/workshop/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
@@ -63,154 +63,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2016/08/23/github/">Github</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2016-08-23T17:50:01+03:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2016</span></span> <span class='time'>5:50 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Github Komutları</h3>
-
-<p>Sizlere Linux Yaz Kampında anlatılanları anlatacağım. Öncelikle github komutlarından başlamak istedim. Daha önceki yazımda bunlara biraz değinmiştim. Fakat yeni öğrendiğim bazı şeylerde var. Bunlarıda size aktarmak istiyorum.</p>
-
-<ul>
-<li>git config &ndash;global user.name</li>
-</ul>
-
-
-<p class="silik">Bu komut ile global kullanıcı adımızı öğrenebiliriz.</p>
-
-
-<ul>
-<li>git config &ndash;global user.email</li>
-</ul>
-
-
-<p class="silik">Aynı şekilde global mail adresimizi öğrenebiliriz.</p>
-
-
-<ul>
-<li>git log</li>
-</ul>
-
-
-<p class="silik">Yapmış olduğumuz tüm commitleri görmek istiyorsak bu komutu kullanmak yeterlidir. Burada commit numaraları da mevcuttur. Daha sonra istediğimiz bir commit'e dönmek için o numaraları kullanacağız. q tuşuna basarak tekrar komutlarımızı yazabiliriz.</p>
-
-
-<ul>
-<li>git reset c79836bc4f5194e7ad7789652610c7aaaa6baa28</li>
-</ul>
-
-
-<p class="silik">Commitlerimize baktık. Eğer istemediğimiz bir commit yaptıysak ya da yanlış commit mesajı yazmışsak hiç endişelenmeyin. Bunun için bu komutu kullanbiliriz. Bu komutla seçmiş olduğumuz son commit'e geri döneriz ve değişikliklerimiz commit'lenmek için bizi bekliyor olacaktır. Sonra tekrar commit edebiliriz. Burada reset'ten sonra yazanlar yukarıdaki komutla öğrendiğimiz commit numaralarıdır.</p>
-
-
-<ul>
-<li>git reset &ndash; hard c79836bc4f5194e7ad7789652610c7aaaa6baa28</li>
-</ul>
-
-
-<p class="silik">Eğer ben değişikliklerimi korumak istemiyorum. Son commit'te ne yaptıysam onlar olsun. Ondan sonra yapılanlar gitsin diyorsanız bu komutu kullanabilirisiniz. Bunu kullanırken onu yapmak istediğinize emin olmalısınız. Aksi halde geri aldığınız committen sonraki tüm değişiklikler kaybolur ve yeniden yazmak zorunda kalırsınız.</p>
-
-
-<ul>
-<li>git diff</li>
-</ul>
-
-
-<p class="silik">Commit'lemeden önce yapmış olduğumuz değişiklikleri bize gösterir. git status'den farkı o sadece dosyadaki değişiklikleri gösterirken bununla dosya içindeki değişiklikleri görebiliriz.</p>
-
-
-<ul>
-<li>git checkout .</li>
-</ul>
-
-
-<p class="silik">Yapmış olduğumuz değişiklikleri silmek istiyorsak yani son commit'e geri dönmek istiyorsak farklı bir yöntem de bu komutu kullanmaktır. Burada sadece commit'ten sonra bir değişiklik yapılmışsa onlar geri alınacaktır. Bunu kullanırken de dikkatli olmalısınız. Aksi halde yaptığınız tüm değişiklikleri kaybedersiniz.</p>
-
-
-<ul>
-<li>git checkout -b branch_name</li>
-</ul>
-
-
-<p class="silik">Yeni bir branch açmak için kullanırız. Branch_name yazan yerine isim vererek kullanbiliriz.</p>
-
-
-<ul>
-<li>git checkout branch_name</li>
-</ul>
-
-
-<p class="Branch'ler arası geçiş yapmak için kullanırız. Burada birden fazla açılmış branch'lerimiz varsa bu komut sayesinde geçiş yapabiliriz."></p>
-
-
-<ul>
-<li>git branch</li>
-</ul>
-
-
-<p class="ilik">Bu komutile hangi branch'de olduğumuzu öğrenebiliriz. Böylece işlemlerimizi kolaylıştırabiliriz.</p>
-
-
-<ul>
-<li>git push origin branch_name</li>
-</ul>
-
-
-<p class="silik">Çalışmış olduğumuz branch'e değişikliklerimizi göndermek için bu komutu kullanabiliriz.</p>
-
-
-<ul>
-<li>Origin bizim karşı taraftaki repomuzu gösterir. Master ise hangi branch'imize ekleme yapacağımızı gösterir.</li>
-<li>git merge branch_name</li>
-</ul>
-
-
-<p class="silik">Branch'e gönderilen kodları merge etmek için bu komutu kullanırız.</p>
-
-
-<ul>
-<li>git pull origin branch_name</li>
-</ul>
-
-
-<p class="silik">Branch adını yazarak o branch'e commit'lenen kodu kendimize almak için kullanırız.</p>
-
-
-<p>Yapabileceklerimiz tabi ki bunlarla sınırlı değildir. Daha fazla şeyler yapmak istiyorsak kendimizi daima geliştirmeliyiz ve bunun için kaynak olarak try.github.io adresinden daha fazla bilgi öğrenebiliriz.</p>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2016/07/31/workshop/">Workshop</a></h1>
+      <h1 class="entry-title">Workshop</h1>
     
     
       <p class="meta">
@@ -226,7 +84,7 @@
   </header>
 
 
-  <div class="entry-content"><p><html>
+<div class="entry-content"><p><html>
 <head>
     <title></title>
 </head>
@@ -366,18 +224,46 @@
 <p></body>
 </html></p>
 </div>
-  
-  
 
 
-    </article>
+  <footer>
+    <p class="meta">
+      
   
-  <div class="pagination">
+
+<span class="byline author vcard">Posted by <span class="fn">Berkan Acar</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2016-07-31T22:29:14+03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2016</span></span> <span class='time'>10:29 pm</span></time>
+      
+
+
+    </p>
     
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://berkanacar.github.io/blog/2016/07/31/workshop/" data-via="" data-counturl="http://berkanacar.github.io/blog/2016/07/31/workshop/" >Tweet</a>
+  
+  
+  
 </div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2016/08/23/github/" title="Next Post: Github">Github &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -401,6 +287,7 @@
 
   
 </aside>
+
 
     </div>
   </div>
