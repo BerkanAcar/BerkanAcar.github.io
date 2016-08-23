@@ -1,0 +1,147 @@
+---
+layout: post
+title: "Workshop"
+date: 2016-07-31 22:29:14 +0300
+comments: true
+categories: 
+---
+
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h3>GitHub</h3>
+	<p class="paragraf">
+		Linux işletim sistemlerinde GitHub'a proje nasıl atılır? Yazımda bu işlemleri terminalden yapacağız. Ve tabiki git'e bir proje eklemek istiyorsak bir Git hesabımız olmalıdır. GitHub üyeliğimiz yoksa github.com adresinden yeni bir üyelik açarak başlayabiliriz. Daha Git'ten sonra yeni bir depo açıyoruz ve bir isim belirliyoruz. Daha sonra Git'e eklemek istediğimiz dosya dizini içine girdikten sonra aşağıdaki kodları çalıştırmalıyız.
+	</p>
+	<b>
+		$git init
+	</b> 
+	<p class="silik">
+		bu kod satırı ile o dosya içerisinde git'e yeni bir depo(repository) açarız.
+	</p>
+	<b>
+		$git status
+	</b>
+	<p class="silik">
+		bu komut ile git'e eklenecek dosyaların durumuna bakarız. Dosyalar üzerinde bir değişiklik olmuşsa ya da daha önce ekleme olmamışsa kırmızı renkli dosyaların mevcut olduğunu göreceksiniz.
+	</p>
+	<b>
+		$git add .
+	</b>
+	<p class="silik">
+		dosyalrı Git'e eklemek için devam ediyoruz.
+	</p>
+	<b>
+		$git status
+	</b>
+	<p class="silik">
+		tekrarbu komut ile dosyaların yeşil renkli olduğunu görürüz. Bunun anlamı dosyaların atılmaya hazır olduğu anlamına gelir.
+	</p>
+	<b>
+		$git commit -m "your_commit_message"
+	</b>
+	<p class="silik">
+		Git'te commit mesajlarının önemli bir yeri vardır Mesajların İngilizce ve emir kipli olmasına dikkat etmeliyiz. Bu mesajlar sayesinde projenizin adımları dışarıdan birisi neler yaptığına ve değişikliklerine bakarak anlayabilir. Hatta GitHub'dan iş teklifi bile alabilirsiniz.
+	</p>
+	<p class="paragraf">
+		Şu ana kadar yapılan tüm işlemler local'dedir. Daha Git'e gönderim yapılmamıştır. Şimdi gelelim bu kodaların GitHub sayfamızdaki projede görünmesine.
+	</p>
+	<b>
+		$git remote add origin git@github.com:your_username/your_project_name.git
+	</b>
+	<p class="silik">
+		şimdi Git ile bağlantısını kuralım. Zaten bu oluşturduğunuz boş depo içerisinde görünecektir. O sayfadan kopyala-yapıştır yaparak alabilirsiniz.
+	</p>
+	<b>
+		$git push -u origin master
+	</b>
+	<p class="silik">
+		ve son olarak dosyaları GitHub'a gönderiyoruz. GitHub'daki depodan kontol edebiliriz. Proje üzerinde herhangi bir değişiklik yaptıktan sonra değişiklikleri güncellemek için yukarıdaki adımları tekrar yaparak devam edebilirsiniz. Sadece 'git remote' komutunu ilkadımda kullanıyoruz daha sonra yazmıyoruz.
+	</p>
+	<h3>MVC (Model:View:Controller)</h3>
+	<p class="paragraf">
+		Öncelikle bu katmanların ne yaptığından kısaca bahsedelim. Model katmanında projemizin veri tabanı işlemleri yürütülür. Controller katmanı ile sayfaların yönetildiği kısımdır. View katmanı ise tüm bu işlemlerin kullanıcı tarafından görülen kısmıdır. Tüm bunların çalışma mantığı ise Client(kullanıcı) tarafından gönderilen istek önce controller'a ulaşır(request). Daha sonra controller verileri toplamak(data collection) için model'e başvurur ve model ise database'den yani veritabanından bilgileri alır. Daha sonra model controller'a gönderir. Daha sonra view katmanına ulaşır. Orada yazılan html, css vb. yazılan kodalara göre görsel kısım tekrar controller aracılığı ile client'a ulaşır(response).
+	</p>
+	<p class="paragraf">
+		NedeN MVC kullanıyoruz diyecek olursak temiz kod yazmak için kullanışlı, hızlı ve başkaları tarafından okunabilir bir kod yazmak öncelikli planlarımız arasında olmalıdır. Bu sayede temiz kod yazmış olacağız. Ve bu katmanlarla farklı yerlerden birbirlerini yöneterek işlem kolaylığı sağlayacaktır. Bu sayede günlerce uğraştığımız işlemleri daha kısa sürede tamamlayabiliriz.
+	</p>
+	<h3>ORM (Object Relational Mapping)</h3>
+	<p class="paragraf">
+		Kısaca orm bizim yerimize nesneleri ilişkisel veritabanı tablomuza bağlayan ve veri alış-verişini sağlayan bir tekniktir. Avantajları:
+		<li>
+			Nesneye dayalı bir programlama metodu sunarak işlerimizi kolaylaştırıyor.
+		</li>
+		<li>
+			Yazdığımız kodun veritabanı çeşitleriyle bir alakası yoktur.
+		</li>
+		<li>
+			En önemlisi ise veritabanı kodları yazmadan çok kolay ve basit bir şekilde veritabanına bağlı bir uygulama yazılabilir.
+		</li>
+	</p>
+	<h3>GEM CYBELE</h3>
+	<p class="paragraf">
+		Bu gem ile birlikte admin ve user yapıları hazır olarak kurulmuş ve ayarlamaları yapılmış bir şekilde kullanıma hazırdır. Tek yapmamız gereken bu gem'i kurdaktan sonra projemizi içine dahil etmek olacaktır. Bu gem sayesinde projelerimizi daha hızlı bir şekilde geliştirmemiz mümkün olacaktır. Biraz projede geçen gem'lerden bahsedelim.
+		<li>
+			gem 'devise': User giriş-çıkış, hesap açma işlemleri için yaygın olarak kullanılan bir gem'dir.
+		</li>
+		<li>
+			gem 'paperclip': Dosya eklemek için kullanılan gem'dir.
+		</li>
+		<li>
+			gem 'hierapolis-rails': Projemize dışarıdan yönetici olarak erişerek kullanıcıları ve bazı durumları yönetmek için kullanılır.
+		</li>
+	</p>
+	<p class="paragraf">
+		Yukarıda bahsi geçen Cybele içindeki gem'lerden sadece bir kaçıdır. Diğer gem'leri github/lab2023/cybele sayfasını ziyaret ederek inceleyebilirsiniz. Şimdi gelelim bu gem'i nasıl kuracağımıza. Kurulumu yapmadan önce ruby ve rails versiyonunuzu kontrol etmeyi unutmayınız.
+		<li>
+			Ruby ~> 2.3
+		</li>
+		<li>
+			Rails ~> 4.2
+		</li>
+		En azından yukarıdaki versiyonların mevcut olması gerekir. 
+	</p>
+	<p class="paragraf">
+		Versiyon kontrollerini yaptıktan sonra şimdi cybele gem'ini kurabiliriz. Bu işlemleri yine terminalden yapıyoruz.</br></br>
+	</p>
+	<p class="silik">
+		$gem install cybele
+	</p>
+	<p>
+		Şimdi kurduğumuz gem ile bir proje oluşturalım.
+	</p>
+	<p class="silik">
+		$cybele project_name
+	</p>
+	<p>
+		Şimdi gelelim projeyi çalıştırmya. Sırasıyla aşağıdaki kodları terminalde çalıştıralım.
+	</p>
+	<p>
+		$bundle install
+	</p>
+	<p>
+		$redis-server
+	</p>
+	<p>
+		$rake sidekiq:start
+	</p>
+	<p>
+		$rake db:create
+	</p>
+	<p>
+		$rake db:migrate
+	</p>
+	<p>
+		$rake dev:seed
+	</p>
+	<p>
+		$rails s
+	</p>
+	<p>
+		Yukarıdaki adımların eksiksiz yapıldığından emin olduktan sonra cybele çalışmaya hazır hale gelmiştir. Artık üzerinde değişiklik yapabilir ve üzerine farklı gem'ler ya da farklı özellikler tanımlayabiliriz.
+	</p>
+	
+</body>
+</html>
