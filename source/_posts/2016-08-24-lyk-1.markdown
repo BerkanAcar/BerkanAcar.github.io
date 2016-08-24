@@ -1,0 +1,201 @@
+---
+layout: post
+title: "LYK-1-"
+date: 2016-08-24 13:59:53 +0300
+comments: true
+categories: 
+---
+
+### Linux Yaz Kampı Günlüğü
+<p class="paragraf">Öncelikle böylesine güzel bir etkinliğe gitmemize olanak sağlayan, orada böylesine güzel bir etkinliği organize eden ve emeği geçen herkese çok teşekkür ederim. Umarım bunun devamı olur ve bizler gibi niceleri bu kamptan faydalanabilirler. Tabi bunun için bizlere de biraz görev düşüyor. Nasıl mı? Öğrendiklerimizi kendimize saklamak yerine kendimizi geliştirip hoca olmak için kampa başvurabiliriz. Böylelikle daha çok öğrenciye ulaşma fırsatını yakalamış oluruz ve daha çok kişinin bu kamptan fayda görmesini sağlayabiliriz. Bu da muhteşem bir duygu olmaz mıydı?</p>
+<p class="paragraf">Kampa staj yaptığımız şirketin yönlendirmesiyle 9 kişiyle beraber gitmeyi planladık. Benim için ilk linuz yaz kampı deneyimi olacaktı. Daha önce 2 sefer akademik bilişim kurslarına katılmıştım. Fakat bunun kadar günleri uzun değildi. Kursa gitmeden önce arkadşlarla beraber aramızda ortak kara alıp otobüs bileti alıp yola koyulmak için hazırlandık. Denizli'den Bolu'ya sadece tek firma direk sefer yapıyordu ve gece 10'da binecektik. O firma konusunda ne kadar endişelerimizde olsa aktarma yapmak yerine yine risk alarak tercih ettik. Gece arabaya bindikten sonra uzun bir yolculuk bizi bekliyordu. Ben ne kadar gece yolculuğunu ve arabada uyumayı sevmesemde uyumak zorundaydım. Yoksa ertesi gün kursta bir hayli zorlanabilirdik. Sabah otogora indik ve üniversitenin yoluna düştük. Üniversiteye vardığımızda kayıt masalarından kayıt yaptırıp yaka kartlarımızı aldık. Öğlen 13:30 gibi konferans olacağını öğrendikten sonra yurda kayıt olmaya karar verdik. O ara baya bir boşluğumuz vardı. Yurda gitmek için tekrar otobüse bindik. Yurda geldik ve linux yaz kampı öğrencisi olduğumuzu söyleyip güvenlikten içeri girdik. Daha sonra kayıt işlemleri için başka bir binaya gittik ve kayıt işlemlerini yaptırdık. Tabi bu bu kadar da kolay olmadı. Çünkü önce para yatırmamız gerekiyordu. Bunun için bir atm arayışı başladı. Her kafadan farklı bir ses çıkıyordu. Şurda var para vermiyor. Burda var bozuk gibi söylentiler yayılmıştı. Biz oranın yakınında bir tane olduğunu duyduk ve oraya doğru yola çıktık. Atm'yi bulduk ve çalışıyordu. Önümüzde 4-5 kişi falan vardı. 3 kişi de biz vardık. Atm paraları taksit taksit aldığı için yatırma işlemi biraz uzun sürüyordu. Zamanı hatırlamıyorum ama 1 saat kadar güneşin altında beklemişizdir. Parayı yatırdıktan sonra yurda geri geldik ve işlemleri tamamladık. Giriş kartlarımızı aldık. O gün cuma olduğu için vakitte gelmişti. Odaya çıkıp eşyaları bıraktıktan sonra cuma'ya gittik. O ara yeni arkadaşlarla tanışmıştık. Okula da tekrar hep beraber gitmiştik. Tek kapılı ufak bir arabası vardı. Fakat biz ona rağmen 5 kişi zorda olsa binerek okula gitmiştik. Biz gittiğimizde konferans yenice başlamıştı. Konferansın bir kısmında uyuduğum için çok fazla bir şey hatırlamıyorum.</p>
+<p class="paragraf">Konferanstan sonra sınıflara geçtik. O ara biz nereye gitmiştik tam hatırlayamadım fakat derse biraz geç kalmıştık ve sınıf tıklım tıklımdı. Oturacak bir yer yoktu. Biz gelince front end sınıfı ile yer değiştirdik. Fakat oraya da sığamadık. Daha sonra ek sıralar getirildi. Yerleştik. Malum her sene olduğu gibi kurulumları yapmadan gelenler olmuştu. İlk gün kurulumları yükleme kararı alındı ve kurulumu yapılmış olanlar çıkabilirdi. Ama biz kurulum yapılmış olmasına rağmen sınıfta kalma kararı aldık. Yapacak bir şeyimiz yok gibi görünüyordu. Ama o gün belediyenin kapanma saatini hesaplamadığımız için öğrenci kartı çıkarma işlemi pazartesi'ye sarkmıştı. Sonra yurda geçtik. Akşam yemeği yemiştik. Ben yine her zamanki gibi yemek seçiyor çıkan yemeklere burun kıvırıyordum. Ama iyi kötü karnımızı doyurmuştuk. Sonra dinlenmek için odalarımıza çekildik.</p>
+<p class="paragraf">Ertesi gün sabah kalktık. Kahvaltıya indik. Ziyafet çeker gibi bir kahvaltı yaptık. Haliyle biraz hesap kabarık olmuştu. Daha sonra okula geçtik. Bize yeni bir sınıf ayarlanmıştı. En azından artık kimse ayakta kalmıyordu. Daha sonra tüm hocalarımızla teker teker tanıştık ve kendimizi tanıttık. Hangi okuldan geldiğimiz, daha önce hangi dilleri kullandığımız gibi konulardan bahsettik. Daha sonra önceki blog yazımda bahsetmiş olduğum konularla giriş yaptık. Ogün akşama kadar sürmüştü. AKşam da biraz ruby anlatıldı. Ve sınıfta yapmamız için ödev verildi. Cümlenin palindron olup olmadığını kontrol edecektik.</p>
+
+	#require 'turkish_support'</br>
+	#using TurkishSupport
+	
+	def palindron kelime
+		print "Bir kelime giriniz:"
+		kelime = gets.chomp
+		if kelime.downcase == kelime.downcase.reverse
+			puts "Kelime palindromdur."
+		else
+			puts "Palindrom olmayan bir kelimedir."
+		end
+	end
+
+	def parse cumle
+		print "Cumle gir:"
+		cumle = gets.chomp
+		if cumle.downcase.gsub(/\W/,"") == cumle.downcase.gsub(/\W/,"").reverse
+			puts "yaşa len"
+		else
+			puts "hadi len"
+		end
+	end
+	puts palindron @kelime
+	puts parse @cumle
+
+<p class="paragraf">Verilen ödevi yapmıştık. Tabi hocanın yazdığı bundan çok daha kısa olmuştu. Bizde hala bir C mantığı yatıyordu. Daha sonra evde yapmamız için birbaşka ödev daha verilmişti. Onuda yapmıştık. Zaten her sabah gidişimizde verilen ödevler soruluyordu. Tabi aramızda yapmayan çok kişi oluyordu. Netice de adı ödev bir kere yapılmak için olmamış ki :). Sonraki bir kaç günü gün hatırlamıyorum. Fakat daha sonra rails anlatılmaya başlanmıştı. İlk olarak ruby ve rails versyon kontrolleri ile başladık. Bende rails 4.2 vardı ve rails 5 kullanacağımızı söylediler. Hemen sürüm yükseltmesi yaptık ve rails kodlamaya hazırdık. Artık terminalden birşeyler yazabilecektik. Ve başlıyoruz.</p>
+
+	rails new project_name -d postgresql
+
+<p class="silik">Rails ile yeni bir proje oluşturmak için kullanıyoruz. Eğer veritabanı türünü belirtmezsek default olarak sqlite ile oluşturuyor. Fakat biz kurstayken sürekli postgresql üzerine çalıştık.</p>
+
+	bundle || bundle install
+
+<p class="silik">İki komutta aynı işlemleri yapıyor. Artık hangisi kolayınıza gelirse. Bunu da projemizde gemfile içinde olan gem'leri yüklemek için yapıyoruz. Aksi halde proje çalışmaz. İşin ilginç tarafı rails'de bir gem'dir.</p>
+<p class="paragraf">Gem ne diye soracak olursanız. Kısacası rails yazarken daha önceden başkalarının yazıp paket haline getirdiği kodları bizim projemizde kullanmamızdır. Böylece proje yaparken işlerimizi çok daha hızlı bir şekilde yapabiliriz. Benim arkadaşlarıma sürekli verdiğim bir örnek vardır. Mesela bir araba yapmak istiyorsan en baştan arabanın tüm parçalarını yapmazsın. Tekerlek, koltuk, direksiyon, kaporta gibi parçaları birer gem olarak düşünün. Sizin asıl amacınız araba yapmaksa asıl işiniz de bu olmalıdır. O yüzden siz sadece bu parçaları birleştirirsiniz ve bir ürün ortaya koyarsınız. Araba da sizin yapacağınz proje olarak düşünülebilir.</p>
+
+	rails generate controller Ideas
+
+<p class="silik">Idea için controller oluşturduk. Buna neden ihtiyaç var derseniz? view'den gelen request controller üzerinden model'e erişiyor. Ve önceki yazımda bahsettiğim gibi mvc ile temiz kod yazma imkanı doğuyor. Ayrıca controller adını yazdıktan sonra yanına action isimlerini peş peşe ekleyebiliriz. Action'lar ise aynı isimli view'lere bağlıdır. index action'ı varsa onu kullanıcaya göstermek için bir tanede index.html.erb olmak zorundadır. Mesela aşağıda index action örneği gösterilmiştir.</p>
+
+	def index
+		@ideas = Idea.all
+	end
+
+<p class="silik">Burada ideas değişkeni içine birazdan oluşturacağımız tüm idea'ları dahil ettik ve burada @ kullanarak bu sınıf değişkenini dışarda kullanıma hazır hale geirdik. Bunu da index.html.erb içinde kullanarak tüm idea'ları listelemek için kullanabiliriz.</p>
+
+	get 'ideas/new', to: 'ideas#new'
+
+<p class="silik">Daha sonra bu action'lar için config/routes içine bu kodları yazarak yol gösteriyoruz. Bunu her action için yapmamız gerekiyor. Fakat biz yine bunları amele gibi yazmayacağız. İlerleyen yazılarımda bunlardan da bahsedeceğim.</p>
+	rails generate model Idea title:string description:text
+
+<p class="silik">Burada yeni bir model oluşturuyoruz ve veritabanına erişim bu model üzerinden sağlanıyor. Attribute türlerini eğer yanlarında belirtmezsek default olarak string atanır. Yani amele gibi her defasında string olan türler için yazmamıza gerek kalmaz. Ayrıca generate yerine kısaca g yazabiliriz.</p>
+<p class="paragraf">Idea adında bir model oluştu ve db migration altnda bir veritabanı oluşturuldu. Bu dosyayı açarak migrate yapmadan içinde değişiklikler yapabiliriz.</p>
+
+	rails db:migrate
+
+<p class="silik">Veritabanı oluşturulduktan sonra kullanıma hazır hale getirmek için migrate etmemiz gerekiyor. Migrate ettikten sonra bu dosya içinde herhangi bir değişiklik yapamayız.</p>
+
+	rails db:rollback || rails db:rollback STEP 2
+
+<p class="silik">Eğer yanlış birşeyler yazmış ve migrate etmişsek teleşa kapılmaya gerek yok. Rollback yaparak migrate işlemini geri alabiliriz. Geri aldıktan sonra içinde değişiklik yaptıktan sonra tekrar migrate etmeliyiz ki çalışabilsin. Eğer yaptığımız migration bir kaç adım geride kalmışsa bunun kullanımı pek tavsiye edilmez ama yine de böyle bir yöntem vardır. Step ile yanına yazılan sayı kadar geriye dönebiliriz.</p>
+
+	rails db:migrate:status
+
+<p class="silik">İlk migrate'imizden sonra bu komut ile durumuna bakabiliriz. Burada up migrate yapılmış olanlar down ile de yapılmamış olanları gösterir ve buradaki migration'larımız oluşturulma sıralarına göredir. Buradan da rollback adımlarına bakabilirsiniz.</p>
+
+	rake db:migrate VERSİON=20080906120000
+
+<p class="silik">Migrate yaparken down olanların tümü sırasıyla migrate olacaktır. Fakat ben hepsini migrate etmek istemiyorum diyorsan version numarısını yazarak o version'a kadar olan migration'ları migrate edebilirsin. Unutulmaması gereken bir konu hiç bir zaman arada down yani migrate edilmemiş migration kalmaz. Çünkü bunlar sırayla çalışmaktadırlar.</p>
+
+	rails db:drop
+
+<p class="silik">Bu komut ile veritabanında oluşturduğumuz verileri silebiliriz. Fakat bundan sonra bir kaç komut daha yazmamız gerekecek.</p>
+
+	rails db:create
+
+	rails db:migrate
+
+	rails db:seed
+
+<p class="silik">Seed dosyamızda eklenmiş veritabanı verileri varsa çalıştırabiliriz. Yoksa gereksiz yazmış oluruz. Yani her seferinde ben projeye elle veriler eklemek istemiyorum diyorsanız seeds.rb dosyası içine yazarak bunu çalıştırdıktan sonra o veriler sizin için oluşturulmuş olacaktır. Aşağıda örneği gösterilmiştir.</p>
+
+	Idea.create(title: 'Süper Fikir', description: 'Harika olmuş')
+
+<p class="paragraf">terminalden rails c yazarak konsolu çalıştırıyoruz. Daha sonra burada veritabanı işlemlerini yürütebiliriz.</p>
+
+	i = Idea.new
+
+<p class="silik">Boş bir tane idea nesnesi oluşturulur ve bu i değişkenine atanır. Eğer new kullanırsak save etmek zorundayız.</p>
+
+	i = Idea.first
+
+<p class="silik">i değişkenine ilk idea'yı atadık.</p>
+
+	i.title = 'Benim Fikrim'
+
+<p class="silik">Title attribute için bir değer atadık.</p>
+
+	i.save
+
+<p class="silik">Yukarıda söylediğim gibi verilerin kaydedilmesi için save etmemiz gerekiyor. Ama tabi bunun yine daha kolay bir yolu mvcuttur.</p>
+
+	Idea.create(title:"Fikrim", description:"Süper bir fikir")
+
+<p class="silik">Create metodunu kullanarak hem new hem save bir arada yapılmış olur ve yukarıda yaptıklarımızı tek satırda yapmış oluruz.</p>
+
+	i.all // tüm idea'ları gösterir.
+	i.first // ilk idea görüntülenir.
+	i.last // son idea görüntülenir.
+	idea = Idea.find_by(title: 'Benim Fikrim') // belli isime göre bulma yapıyoruz.
+	ideas = Idea.where(title: 'Benim Fikrim', id:1) // bu şekilde de bulabiliriz.
+	idea = Idea.update(title: 'Yeni Fikir') // doğrudan update yaparız. save metoduna gerek kalmaz.
+	idea.destroy // oluşan veri uçuruldu.
+	idea.errors // kaydedilemeyen verilerin nedenlerini gösterir.
+	idea.valid? // validation olup olmadığını gösterir. true ya da false döner.
+	idea.save validate: false // model içinde yaptığımız validation'ları atlamaya yarar.
+	reload! // Model'de yapılan değişiklik olduğunda kullanırız.
+	idea.errors.full_messages // neden kaydetmediğimizi yani hataları bize gösterir.
+	idea.errors[:base] << "This person is evil" // bu mesajı ekleyebiliriz ve bu herhangi bir veriye bağlı bir hata değildir.
+
+<p class="silik">Yukarıda olduğu gibi birçok komut vardır. Bunlar sadece birkaç tanesi. Konsolu kapatabiliriz artık. Bunun için exit yazmamız yeterlidir.</p>
+
+	gem 'annotate'
+
+<p class="silik">Bu gem sayesinde oluşturduğumuz veritabanındaki verileri model'de yorum satırı halinde görmemizi sağlıyor. Sadece işimizi kolaylaştımak için kullanabiliriz. Yoksa başka bir işlevselliği yoktur.</p>
+
+	validates :title, presence: true
+
+<p class="silik">Oluşturmuş olduğumuz idea model'i içine validasyonlar ekleyerek kullanıcı verileri girerken bir kontrol sağlayabiliriz. Burada da title boş bırakılamaz diye bir validasyon ekledik.</p>
+
+	validates :title, presence: {message: "bos bırakma"}, length: { minimum: 10}
+<p class="silik">Burada da peş peşe validasyon eklemeyi gösterebiliriz. Kullanıcıya boş bırakma diye kendimiz bir mesaj verdik. Beraberinde ise uzunluğun minimum 10 olacağını belirttik. Biliyorum bu iki durum birbirine zıt ama burada sadece bir örnek göstermek için böyle birşey kullanmıştık. İsterseniz kendiniz bunu maximum olarak değiştirebilirsiniz.</p>
+	
+	rails g migration add_referal_to_ideas referal:string || rails g migration AddReferalToIdeas referal:string
+
+<p class="silik">Diyelim ki idea model'ine eklemeyi unuttuğumuz bir attribute var. Eee o zaman model'i silip tekrar mı yazıyoruz? Tabi ki hayır. Bunun için bir migration yazıyoruz eğer yapıyı bozmazsanız size dosya otomatik olarak dolu gelecektir. Burada yapıdan kastım ya alt çizgilerle ayırıyoruz ya da baş harflerini büyük yazıyoruz. Ayrıca isim gayet anlaşılır ideas tablosuna referal ekle şekline bu yapı önemlidir. Gelmezse de elle yazmak mümkündür.</p>
+
+	add_column :ideas, :referal, :string
+
+<p class="silik">Böyle bir satır eklenmiş olması gerekiyor. Eğer yoksa dediğim gibi kendimiz de yazabiliriz.</p>
+
+	rails db:migrate
+
+<p class="silik">Her migration'dan sonra da migrate işlemi yapmamız gerekiyor. Aksi halde yine bu verileri kullanamayız.</p>
+
+	rails g migration remove_referal_from_ideas
+
+<p class="silik">Eğer olurda yanlış bir veri eklemişsek yine model'i baştan yazmıyoruz ya da rollback yapma ihtiyacı duymuyoruz. Bunun için yine bir migration yazıyoruz ve attribute tablodan çıkartılıyor.</p>
+
+	remove_column :ideas, :referal
+<p class="silik">Yine migration içinde böyle bir satır oluşması gerekiyor. Eğer oluşmazsa yine elle yazabiliriz.</p>
+	
+	rails g model Category name description
+
+<p class="silik">Category adında farklı bir model oluşturduk. Buradan farklı işlemleri yürütebiliriz.</p>
+
+	rails g migration change_name_to_title
+
+<p class="silik">Az önce name adında oluşturduğumuz veriyi title olarak değiştirmek istiyoruz. Bunun için yine bir migration yazdık.</p>
+
+	rename_column :categories, :name, :title
+
+<p class="silik">Yine migration içi bu şekilde olamalıdır. Eğer değilse yine elle yazılabilir. Ve unutmuyoruz ki her migration işlemlerinden sonra migrate yazpmamız gerekir.</p>
+
+	validates :color, inclusion: { in: %w(red blue green), message: "kırmızı mavi yeşil olabilir." }
+
+<p class="silik">Category model'i içine bir validasyon tanımladık ve bu validasyonla color attribute'e sadece belirlediğimiz renklerin yazılması kontrolünü yaptık. Yine bunu yapmak yerine selectbox kullanılabilir. Bu ara color attribute'i kendiniz ekleyebilirsiniz. Nede olsa migration eklemyi öğrendiniz :).</p>
+
+	validates :title, uniqueness: true
+
+<p class="silik">Yine category model'ine title benzersiz olmalıdır diye validasyon ekledik.</p>
+
+	validates :password, confirmation: true
+
+<p class="silik">Eğer password girişi istiyorsak kullanıcıdan ve password_confirmation diye bir field'imiz varsa bu eşleşmeyi yapmalıyız. Yoksa kullanıcı iki farklı veri girebilir.</p>
+
+	validate :check_planned_to
+<code>
+  def check_planned_to </br>
+		if planned_to.present? && planned_to < Date.today </br>
+			errors.add(:planned_to, "gecmise planlanamaz.")</br>
+		end</br>
+  end</br>
+</code>
+
+<p class="silik">Category model'ine check_planned_to adında bir metod yazdık ve burada planned_to attribute'i boş olamaz ve geçmişe planlanamaz şeklinede bir ayarlama yaptık. Kendimizde validasyon ekleyebiliriz.</p>
+<p class="paragraf">Burada anlatılanlar gün gün yazılamamıştır. Bir kaç günlük yazılar vardır. Bundan sonraki yazılarımda günlük olarak anlatılacaktır.</p>
