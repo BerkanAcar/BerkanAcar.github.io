@@ -9,31 +9,31 @@ categories:
 ### Github Komutları
 Sizlere Linux Yaz Kampında anlatılanları anlatacağım. Öncelikle github komutlarından başlamak istedim. Daha önceki yazımda bunlara biraz değinmiştim. Fakat yeni öğrendiğim bazı şeylerde var. Bunlarıda size aktarmak istiyorum.
 
-*	git config --global user.name
+	git config --global user.name
 <p class="silik">Bu komut ile global kullanıcı adımızı öğrenebiliriz.</p>
-*	git config --global user.email
+	git config --global user.email
 <p class="silik">Aynı şekilde global mail adresimizi öğrenebiliriz.</p>
-*	git log
+	git log
 <p class="silik">Yapmış olduğumuz tüm commitleri görmek istiyorsak bu komutu kullanmak yeterlidir. Burada commit numaraları da mevcuttur. Daha sonra istediğimiz bir commit'e dönmek için o numaraları kullanacağız. q tuşuna basarak tekrar komutlarımızı yazabiliriz.</p>
-*	git reset c79836bc4f5194e7ad7789652610c7aaaa6baa28
+	git reset c79836bc4f5194e7ad7789652610c7aaaa6baa28
 <p class="silik">Commitlerimize baktık. Eğer istemediğimiz bir commit yaptıysak ya da yanlış commit mesajı yazmışsak hiç endişelenmeyin. Bunun için bu komutu kullanbiliriz. Bu komutla seçmiş olduğumuz son commit'e geri döneriz ve değişikliklerimiz commit'lenmek için bizi bekliyor olacaktır. Sonra tekrar commit edebiliriz. Burada reset'ten sonra yazanlar yukarıdaki komutla öğrendiğimiz commit numaralarıdır.</p>
-*	git reset -- hard c79836bc4f5194e7ad7789652610c7aaaa6baa28
+	git reset -- hard c79836bc4f5194e7ad7789652610c7aaaa6baa28
 <p class="silik">Eğer ben değişikliklerimi korumak istemiyorum. Son commit'te ne yaptıysam onlar olsun. Ondan sonra yapılanlar gitsin diyorsanız bu komutu kullanabilirisiniz. Bunu kullanırken onu yapmak istediğinize emin olmalısınız. Aksi halde geri aldığınız committen sonraki tüm değişiklikler kaybolur ve yeniden yazmak zorunda kalırsınız.</p>
-*	git diff
+	git diff
 <p class="silik">Commit'lemeden önce yapmış olduğumuz değişiklikleri bize gösterir. git status'den farkı o sadece dosyadaki değişiklikleri gösterirken bununla dosya içindeki değişiklikleri görebiliriz.</p>
-*	git checkout .
+	git checkout .
 <p class="silik">Yapmış olduğumuz değişiklikleri silmek istiyorsak yani son commit'e geri dönmek istiyorsak farklı bir yöntem de bu komutu kullanmaktır. Burada sadece commit'ten sonra bir değişiklik yapılmışsa onlar geri alınacaktır. Bunu kullanırken de dikkatli olmalısınız. Aksi halde yaptığınız tüm değişiklikleri kaybedersiniz.</p>
-*	git checkout -b branch_name
-<p class="silik">Yeni bir branch açmak için kullanırız. Branch_name yazan yerine isim vererek kullanbiliriz.</p>
-*	git checkout branch_name
-<p class="Branch'ler arası geçiş yapmak için kullanırız. Burada birden fazla açılmış branch'lerimiz varsa bu komut sayesinde geçiş yapabiliriz."></p>
-*	git branch
-<p class="ilik">Bu komutile hangi branch'de olduğumuzu öğrenebiliriz. Böylece işlemlerimizi kolaylıştırabiliriz.</p>
-*	git push origin branch_name
+	git checkout -b branch_name
+<p class="silik">Yeni bir branch açmak için kullanırız. Branch_name yazan yere isim vererek kullanbiliriz.</p>
+	git checkout branch_name
+<p class="silik">Branch'ler arası geçiş yapmak için kullanırız. Burada birden fazla açılmış branch'lerimiz varsa bu komut sayesinde geçiş yapabiliriz.</p>
+	git branch
+<p class="silik">Bu komut ile hangi branch'de olduğumuzu öğrenebiliriz. Böylece işlemlerimizi kolaylıştırabiliriz.</p>
+	git push origin branch_name
 <p class="silik">Çalışmış olduğumuz branch'e değişikliklerimizi göndermek için bu komutu kullanabiliriz.</p>
-*	Origin bizim karşı taraftaki repomuzu gösterir. Master ise hangi branch'imize ekleme yapacağımızı gösterir.
-*	git merge branch_name
+<p>Origin bizim karşı taraftaki repomuzu gösterir. Master ise hangi branch'imize ekleme yapacağımızı gösterir.</p>
+	git merge branch_name
 <p class="silik">Branch'e gönderilen kodları merge etmek için bu komutu kullanırız.</p>
-*	git pull origin branch_name
+	git pull origin branch_name
 <p class="silik">Branch adını yazarak o branch'e commit'lenen kodu kendimize almak için kullanırız.</p>
 <p>Yapabileceklerimiz tabi ki bunlarla sınırlı değildir. Daha fazla şeyler yapmak istiyorsak kendimizi daima geliştirmeliyiz ve bunun için kaynak olarak try.github.io adresinden daha fazla bilgi öğrenebiliriz.</p>
