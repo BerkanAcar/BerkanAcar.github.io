@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://berkanacar.github.io/atom.xml" rel="self"/>
   <link href="http://berkanacar.github.io/"/>
-  <updated>2016-08-29T13:56:45+03:00</updated>
+  <updated>2016-08-29T14:04:34+03:00</updated>
   <id>http://berkanacar.github.io/</id>
   <author>
     <name><![CDATA[Berkan Acar]]></name>
@@ -311,107 +311,83 @@ idea.errors[:base] &lt;&lt; "This person is evil" // bu mesajı ekleyebiliriz ve
 
 <p>Sizlere Linux Yaz Kampında anlatılanları anlatacağım. Öncelikle github komutlarından başlamak istedim. Daha önceki yazımda bunlara biraz değinmiştim. Fakat yeni öğrendiğim bazı şeylerde var. Bunlarıda size aktarmak istiyorum.</p>
 
-<ul>
-<li>git config &ndash;global user.name</li>
-</ul>
-
+<pre><code>git config --global user.name
+</code></pre>
 
 <p class="silik">Bu komut ile global kullanıcı adımızı öğrenebiliriz.</p>
 
 
-<ul>
-<li>git config &ndash;global user.email</li>
-</ul>
-
+<pre><code>git config --global user.email
+</code></pre>
 
 <p class="silik">Aynı şekilde global mail adresimizi öğrenebiliriz.</p>
 
 
-<ul>
-<li>git log</li>
-</ul>
-
+<pre><code>git log
+</code></pre>
 
 <p class="silik">Yapmış olduğumuz tüm commitleri görmek istiyorsak bu komutu kullanmak yeterlidir. Burada commit numaraları da mevcuttur. Daha sonra istediğimiz bir commit'e dönmek için o numaraları kullanacağız. q tuşuna basarak tekrar komutlarımızı yazabiliriz.</p>
 
 
-<ul>
-<li>git reset c79836bc4f5194e7ad7789652610c7aaaa6baa28</li>
-</ul>
-
+<pre><code>git reset c79836bc4f5194e7ad7789652610c7aaaa6baa28
+</code></pre>
 
 <p class="silik">Commitlerimize baktık. Eğer istemediğimiz bir commit yaptıysak ya da yanlış commit mesajı yazmışsak hiç endişelenmeyin. Bunun için bu komutu kullanbiliriz. Bu komutla seçmiş olduğumuz son commit'e geri döneriz ve değişikliklerimiz commit'lenmek için bizi bekliyor olacaktır. Sonra tekrar commit edebiliriz. Burada reset'ten sonra yazanlar yukarıdaki komutla öğrendiğimiz commit numaralarıdır.</p>
 
 
-<ul>
-<li>git reset &ndash; hard c79836bc4f5194e7ad7789652610c7aaaa6baa28</li>
-</ul>
-
+<pre><code>git reset -- hard c79836bc4f5194e7ad7789652610c7aaaa6baa28
+</code></pre>
 
 <p class="silik">Eğer ben değişikliklerimi korumak istemiyorum. Son commit'te ne yaptıysam onlar olsun. Ondan sonra yapılanlar gitsin diyorsanız bu komutu kullanabilirisiniz. Bunu kullanırken onu yapmak istediğinize emin olmalısınız. Aksi halde geri aldığınız committen sonraki tüm değişiklikler kaybolur ve yeniden yazmak zorunda kalırsınız.</p>
 
 
-<ul>
-<li>git diff</li>
-</ul>
-
+<pre><code>git diff
+</code></pre>
 
 <p class="silik">Commit'lemeden önce yapmış olduğumuz değişiklikleri bize gösterir. git status'den farkı o sadece dosyadaki değişiklikleri gösterirken bununla dosya içindeki değişiklikleri görebiliriz.</p>
 
 
-<ul>
-<li>git checkout .</li>
-</ul>
-
+<pre><code>git checkout .
+</code></pre>
 
 <p class="silik">Yapmış olduğumuz değişiklikleri silmek istiyorsak yani son commit'e geri dönmek istiyorsak farklı bir yöntem de bu komutu kullanmaktır. Burada sadece commit'ten sonra bir değişiklik yapılmışsa onlar geri alınacaktır. Bunu kullanırken de dikkatli olmalısınız. Aksi halde yaptığınız tüm değişiklikleri kaybedersiniz.</p>
 
 
-<ul>
-<li>git checkout -b branch_name</li>
-</ul>
+<pre><code>git checkout -b branch_name
+</code></pre>
+
+<p class="silik">Yeni bir branch açmak için kullanırız. Branch_name yazan yere isim vererek kullanbiliriz.</p>
 
 
-<p class="silik">Yeni bir branch açmak için kullanırız. Branch_name yazan yerine isim vererek kullanbiliriz.</p>
+<pre><code>git checkout branch_name
+</code></pre>
+
+<p class="silik">Branch'ler arası geçiş yapmak için kullanırız. Burada birden fazla açılmış branch'lerimiz varsa bu komut sayesinde geçiş yapabiliriz.</p>
 
 
-<ul>
-<li>git checkout branch_name</li>
-</ul>
+<pre><code>git branch
+</code></pre>
+
+<p class="silik">Bu komut ile hangi branch'de olduğumuzu öğrenebiliriz. Böylece işlemlerimizi kolaylıştırabiliriz.</p>
 
 
-<p class="Branch'ler arası geçiş yapmak için kullanırız. Burada birden fazla açılmış branch'lerimiz varsa bu komut sayesinde geçiş yapabiliriz."></p>
-
-
-<ul>
-<li>git branch</li>
-</ul>
-
-
-<p class="ilik">Bu komutile hangi branch'de olduğumuzu öğrenebiliriz. Böylece işlemlerimizi kolaylıştırabiliriz.</p>
-
-
-<ul>
-<li>git push origin branch_name</li>
-</ul>
-
+<pre><code>git push origin branch_name
+</code></pre>
 
 <p class="silik">Çalışmış olduğumuz branch'e değişikliklerimizi göndermek için bu komutu kullanabiliriz.</p>
 
 
-<ul>
-<li>Origin bizim karşı taraftaki repomuzu gösterir. Master ise hangi branch'imize ekleme yapacağımızı gösterir.</li>
-<li>git merge branch_name</li>
-</ul>
+<p>Origin bizim karşı taraftaki repomuzu gösterir. Master ise hangi branch'imize ekleme yapacağımızı gösterir.</p>
 
+
+<pre><code>git merge branch_name
+</code></pre>
 
 <p class="silik">Branch'e gönderilen kodları merge etmek için bu komutu kullanırız.</p>
 
 
-<ul>
-<li>git pull origin branch_name</li>
-</ul>
-
+<pre><code>git pull origin branch_name
+</code></pre>
 
 <p class="silik">Branch adını yazarak o branch'e commit'lenen kodu kendimize almak için kullanırız.</p>
 
