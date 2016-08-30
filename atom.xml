@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://berkanacar.github.io/atom.xml" rel="self"/>
   <link href="http://berkanacar.github.io/"/>
-  <updated>2016-08-29T14:04:34+03:00</updated>
+  <updated>2016-08-30T22:55:26+03:00</updated>
   <id>http://berkanacar.github.io/</id>
   <author>
     <name><![CDATA[Berkan Acar]]></name>
@@ -12,6 +12,127 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Lyk-2]]></title>
+    <link href="http://berkanacar.github.io/blog/2016/08/30/lyk-2/"/>
+    <updated>2016-08-30T21:47:23+03:00</updated>
+    <id>http://berkanacar.github.io/blog/2016/08/30/lyk-2</id>
+    <content type="html"><![CDATA[<h3>Linux Yaz Kampı Günlüğü -10.08.2016-</h3>
+
+<p class="paragraf">En son kaldığımız yerden yazmaya devam ediyorum. Öncelikle byebug gem'inden bahsedeceğim. Byebug nedir diye soracak olursanız. Bir nevi breakpoint olarak düşünebilirsiniz. Yazıldığı yere kadar çalışır ve işlemi orada keser. Aşağıda örneği mevcuttur.</p>
+
+
+<pre><code>def show
+    byebug
+end
+</code></pre>
+
+<p class="paragraf">Şimdi daha önce oluşturmuş olduğumuz ideas controller'ı içine action'lar oluşturabiliriz. Bunları tek tek burada amlatmayacağım. Zaten bunun için rails'in dökümantasyonu mevcuttur. Oradan bakabilirsiniz. Şimdi show action'ı oluşturduğumuzu varsayalım. Bunun routes ayarlamlarını yapıp views/ideas altında show.html.erb dosyası oluşturmamız gerekiyor. Yine bu show dosyasını dökümantasyondan bakarak doldurabilirsiniz.</p>
+
+
+<pre><code>&lt;a href="http://berkanacar.github.io/ideas/&lt;%= idea.id %&gt;"&gt;&lt;%= idea.title %&gt;&lt;/a&gt;
+</code></pre>
+
+<p class="silik">Burada yine index.html.erb oluşturduğumuzu varsayarak onun içerisine idea'nın title'nı link olarak kullanıcıya gösterip, o title'a ait id'ye gitmesini sağlayarak yol gösterdik. Tabi yine bunu bu şekilde yapmıyoruz. Rails bizim için her konuda kolaylıklar sağladığı gibi burada da sağlamış. Bunun için prefixler mevcuttur. İlerleyen satırlarda da onlardan bahsedeceğim.</p>
+
+
+<pre><code>&lt;a href="http://berkanacar.github.io/ideas"&gt;Back to list of ideas&lt;/a&gt;
+</code></pre>
+
+<p class="silik">Yine show dosyası içinden index'e back linki verdik. Şimdilik bunları html taglar'i ile gösteriyorum.</p>
+
+
+<pre><code>get 'ideas/:id', to: 'ideas#show', as: 'idea'
+</code></pre>
+
+<p class="silik">Burada show için routes örneğini gösterdim. Burada farklı olarak as kullandık. Göstermemdeki asl amaçta buydu. Bunun anlamı az önce bahsetmiş olduğum prefix'lerle ilişkilidir. Aşağıda örneği mevcuttur.</p>
+
+
+<pre><code>Prefix      Verb   URI Pattern                            Controller#Action
+ideas       GET    /ideas(.:format)                       ideas#index
+            POST   /ideas(.:format)                       ideas#create
+new_idea    GET    /ideas/new(.:format)                   ideas#new
+edit_idea GET    /ideas/:id/edit(.:format)              ideas#edit
+  idea      GET    /ideas/:id(.:format)                   ideas#show
+            PATCH  /ideas/:id(.:format)                   ideas#update
+            PUT    /ideas/:id(.:format)                   ideas#update
+            DELETE /ideas/:id(.:format)                   ideas#destroy
+</code></pre>
+
+<p class="paragraf">Burada idea için tüm prefix'ler mevcuttur. Yapıyı bozmamak gerekiyor. Kodun anlaşılabilir olması için bunlar önemli noktalardır. Gelelim şimdi asıl konumuza. Biz az önce show sayfasına bir link vermiştik. Bunu rails'in link_to methodu ile de yapabiliriz.</p>
+
+
+<pre><code>&lt;%= link_to 'show', idea_path %&gt;
+</code></pre>
+
+<p class="silik">Bunu prefix yardımıyla orada yazan prefix adıyla path yazarakta link verebiliriz. Bundan sonra link_to kullanmanız tavsiye edilir. Ve bunların yanlarında verb'leri mevcuttur. Show için method belirtmeye gerek yoktur. Zaten default olarak bunu alıyor. Method kullanımını ilerleyen yazılarımda anlatacağım.</p>
+
+
+<pre><code>rake db:reset
+</code></pre>
+
+<p class="silik">Hatırlarsanız önceki yazımda veritabınını sırasıyla drop, create, migrate ve seed etmiştik. Bu komut tek başına 4'ünü birden çalıştırıyor. Amele gibi yine tek tek yazmaya gerek kalmıyor.</p>
+
+
+<pre><code>protect_from_forgery with: :exception
+</code></pre>
+
+<p class="silik">Application controller'ı içinde mevcut olan bu kod satırı ile birisi uygulamamızda sürekli post göndermesin diye rails bizim için böyle bir güzellik yapmış. Ama biz form_for kullanmazsak burada hata alıyoruz. Projemize ilk başladığımızda html ile form oluşturma anlatılmıştı. Biz de o süre boyunca bu komutu yorum satırı olarak bırakıp kullanabiliriz. Ama tabi bunu yapmıyoruz. Buradan anlayacağınız üzere rails'de formları form_for ile oluşturuyoruz.</p>
+
+
+<pre><code>&lt;input type="hidden" name="authenticity_token" value="&lt;%= form_authenticity_token %&gt;"&gt;
+</code></pre>
+
+<p class="silik">Yukarıda ki açığı gidermek için hidden field olarak bu komutu form oluşturuken yazıyoruz. Bu sayede güvenlik açığnı kısmen çözmüş oluyoruz. Ama biz yine de form_for kullanmaya özen gösterelim.</p>
+
+
+<pre><code>private
+    def idea_params
+        params.require(:idea).permit(:title, :description, :planned_to)
+    end
+</code></pre>
+
+<p class="silik">Burada ideas controller'ında form oluşturma işlemleri için private altında idea_params adında method oluşturduk. Bu sayede kullanıcının form oluştururken orada belirtilen field'ler dışında başka bir field göndermesinin önüne geçmiş olduk. Bunu da aşağıdaki şekilde kullanabiliriz.</p>
+
+
+<pre><code>@idea = Idea.new(idea_params)
+</code></pre>
+
+<p class="silik">Eğer bu şekilde kendimizi sağlama almasaydık aşağıdaki gibi kullanacaktık.</p>
+
+
+<pre><code>@idea = Idea.new(params.require(:idea).permit(:title, :description, :planned_to))
+</code></pre>
+
+<p class="paragraf"> Bu şekilde de kullanım mevcuttur. Fakat biz bunu daha sonra da kullanacağımız için method olarak yazmamız ve bunu da private olarak belirterek dışarıdan erişimi kapatmış oluyoruz.</p>
+
+
+<pre><code>def create
+    @idea = Idea.new(idea_params)
+    if @idea.save
+        redirect_to idea_path(@idea)
+    else
+        render :new
+    end
+end
+</code></pre>
+
+<p class="silik">Burada create action örneği mevcuttur. Eğer kayıt olursa show'a redirect oluyor. Yani bizi yönlendiriyor. Else'de ise validasyondan geçmemiş demektir ve render new ile aynı sayfada kalarak aşağıdaki komut ile hata mesajını ekrana basabiliriz.</p>
+
+
+<pre><code>&lt;% if @idea.errors.any? %&gt;
+    &lt;h3&gt;
+        &lt;%= @idea.errors.full_messages.join(", ") %&gt;
+    &lt;/h3&gt;
+</code></pre>
+
+<p>  &lt;% end %></p>
+
+<p class="silik">Idea'ya ait hataları bulup virgül ile ayırdıktan sonra ekrana bastırabiliriz. Bunu da new.html.erb içine yazıyoruz. Bu gecelik anlatacaklarım bu kadar. İlerleyen yazılarımda konulara devam edeceğim.</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[LYK-1-]]></title>
